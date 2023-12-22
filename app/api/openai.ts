@@ -58,6 +58,15 @@ export async function handle(
     });
   }
 
+  req
+    .clone()
+    .json()
+    .then(({ messages, model }) => {
+      const { content: userInput } = messages[messages.length - 1];
+      console.log(`[OpenAI Route] user input ${JSON.stringify(userInput)}`);
+      console.log(`[OpenAI Route] model ${model}`);
+    });
+
   try {
     const response = await requestOpenai(req);
 
