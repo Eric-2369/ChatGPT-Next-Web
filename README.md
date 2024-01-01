@@ -1,8 +1,5 @@
 <div align="center">
-
-<a href='#企业版'>
-  <img src="./docs/images/ent.svg" alt="icon"/>
-</a>
+<img src="./docs/images/icon.svg" alt="icon"/>
 
 <h1 align="center">NextChat (ChatGPT Next Web)</h1>
 
