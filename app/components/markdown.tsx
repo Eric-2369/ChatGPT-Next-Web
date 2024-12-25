@@ -5,6 +5,7 @@ import RemarkBreaks from "remark-breaks";
 import RehypeKatex from "rehype-katex";
 import RemarkGfm from "remark-gfm";
 import RehypeHighlight from "rehype-highlight";
+import hljs from "highlight.js";
 import { useRef, useState, RefObject, useEffect, useMemo } from "react";
 import { copyToClipboard, useWindowSize } from "../utils";
 import mermaid from "mermaid";
@@ -282,6 +283,14 @@ function _MarkDownContent(props: { content: string }) {
           {
             detect: false,
             ignoreMissing: true,
+            languages: {
+              ...hljs
+                .listLanguages()
+                .reduce((acc: Record<string, any>, lang) => {
+                  acc[lang] = () => hljs.getLanguage(lang);
+                  return acc;
+                }, {}),
+            },
           },
         ],
       ]}
