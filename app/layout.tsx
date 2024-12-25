@@ -56,7 +56,7 @@ export default function RootLayout({
             <SpeedInsights />
           </>
         )}
-        {serverConfig?.gtmId && (
+        {/*{serverConfig?.gtmId && (
           <>
             <GoogleTagManager gtmId={serverConfig.gtmId} />
           </>
@@ -65,7 +65,7 @@ export default function RootLayout({
           <>
             <GoogleAnalytics gaId={serverConfig.gaId} />
           </>
-        )}
+        )}*/}
       </body>
     </html>
   );
